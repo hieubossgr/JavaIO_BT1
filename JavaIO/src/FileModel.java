@@ -1,31 +1,13 @@
 public class FileModel {
     private String url;
     private int lengOfCharacterOfLine;
-    private boolean lengOfCharacter;
+    private int line;
 
-    FileModel(String url) {
+    FileModel(String url, boolean check, int line) {
         this.url = url;
-        lengOfCharacterOfLine = 256;
-        lengOfCharacter = true;
-    }
-
-    FileModel(String url, boolean lengOfCharacter, int lengOfCharacterOfLine) {
-        this.url = url;
-        this.lengOfCharacter = lengOfCharacter;
-        this.lengOfCharacterOfLine = lengOfCharacterOfLine;
-    }
-    
-    FileModel(String url, boolean lengOfCharacter) {
-        this.url = url;
-        this.lengOfCharacter = lengOfCharacter;
-    }
-
-    public boolean isLengOfCharacter() {
-        return lengOfCharacter;
-    }
-
-    public void setLengOfCharacter(boolean lengOfCharacter) {
-        this.lengOfCharacter = lengOfCharacter;
+        this.line = line;
+        if(check) lengOfCharacterOfLine = 256;
+        else lengOfCharacterOfLine = Integer.MAX_VALUE;
     }
 
     public String getUrl() {
@@ -42,5 +24,9 @@ public class FileModel {
 
     public void setLengOfCharacterOfLine(int lengOfCharacterOfLine) {
         this.lengOfCharacterOfLine = lengOfCharacterOfLine;
+    }
+    
+    public int getLine() {
+        return line;
     }
 }
