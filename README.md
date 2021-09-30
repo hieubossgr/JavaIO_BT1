@@ -5,7 +5,7 @@
     - Class fileModel thể hiện 1 file gồm 3 thuộc tính:
         + url: Đường dẫn tới file
         + lengthOfCharacterOfLine: Số lượng ký tự tối đa trên 1 dòng (Đang để mặc định là 256)
-        + lengOfCharacter: Là biến boolean để xét xem có cần yêu cầu về số lượng ký tự tối đa trên 1 dòng hay không.
+        + lengOfCharacter: Là biến boolean để xét xem có cần yêu cầu về số lượng ký tự tối đa trên 1 dòng hay không
             "true": Đọc 256 kí tự
             "false" Đọc vô hạn
         + Những lỗi có thể xảy ra:
