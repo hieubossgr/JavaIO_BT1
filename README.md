@@ -1,0 +1,19 @@
+1. Chương trình khởi chạy trong FileMain:
+    - Nhập tên file muốn đọc (src/text.txt hoặc một đường dẫn khác)
+    - Nhập số lượng n dòng muốn đọc từ dưới lên trên
+2. Xử lý đọc file
+    - Class fileModel thể hiện 1 file gồm 3 thuộc tính:
+        + url: Đường dẫn tới file
+        + lengthOfCharacterOfLine: Số lượng ký tự tối đa trên 1 dòng (Đang để mặc định là 256)
+        + lengOfCharacter: Là biến boolean để xét xem có cần yêu cầu về số lượng ký tự tối đa trên 1 dòng hay không.
+            Mặc định để "true": Nếu có 1 dòng nhiều hơn số lượng dòng tối đa thì sẽ báo lỗi
+            Có thể sửa thành "false" bằng phương thức set để xóa bỏ yêu cầu về số lượng dòng tối đa
+        + Những lỗi có thể xảy ra:
+            * Không tìm thấy file
+            * Không đọc được file
+            * File tồn tại dòng vượt quá số ký tự đã quy ước
+3. Ý tưởng:
+    - Việc đọc file sẽ đọc theo dòng
+    - Mỗi dòng được đọc sẽ lưu vào một danh sách List<String> list = new ArrayList<String>();
+    - Khi đọc đến dòng thứ n+1 trở đi list sẽ xóa đi bản ghi đầu tiên của list với mục đích giảm thiểu bộ nhớ nếu file quá nhiều dòng
+    - Sau khi đọc xong: list sẽ chỉ chứa n dòng cuối cùng của file
